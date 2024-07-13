@@ -1,47 +1,51 @@
-.footer {
-    background-color: #333;
+/* Basic Footer Styles */
+footer {
+    background-color: #241f1f;
+    /* Dark background color */
     color: #fff;
-    padding: 40px 0;
-  }
-  
-  .footer-content {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+    /* Light text color */
+    padding: 30px 0;
+    /* Padding top and bottom */
+    justify-items: center;
+}
+
+.footer-inner {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .footer-section {
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 40px;
-  }
-  
-  .footer-title {
-    font-size: 18px;
-    font-weight: 600;
-    margin-bottom: 20px;
-  }
-  
-  .footer-link {
-    color: #fff;
+    flex-wrap: wrap;
+    /* Allow items to wrap */
+    justify-content: space-around;
+    /* Center items horizontally */
+    max-width: 1200px;
+    /* Maximum width of content */
+    margin: 0 auto;
+    /* Center align horizontally */
+}
+
+
+
+.footer-link {
+    color: #b86507;
+    /* Link text color */
     text-decoration: none;
-    display: inline-block;
-    margin-bottom: 10px;
-  }
-  
-  .footer-link:hover {
-    color: #ccc;
-  }
-  
-  .footer-bottom {
+    /* Remove underline */
+    display: block;
+    /* Block-level display for links */
+    margin-top: 5px;
+    /* Space above links */
+    font-size: large;
+    font-weight: 600;
+}
+
+.footer-bottom {
     text-align: center;
+    /* Center align text */
+    margin-top: 20px;
+    /* Space above footer bottom */
+}
+
+.footer-bottom p {
     font-size: 14px;
-  }
-  
-  .footer-copyright {
+    /* Bottom text size */
     color: #ccc;
-  }
-  
+    /* Lighter text color */
+}

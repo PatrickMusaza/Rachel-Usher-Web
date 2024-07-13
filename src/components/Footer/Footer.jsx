@@ -1,39 +1,34 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
+import "./Footer.css";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <div className="footer-content">
+      <div className="footer-inner">
         <div className="footer-section">
-          <h4 className="footer-title">Get In Touch</h4>
-          {/* Add your contact information here */}
+          <Link to="/get-in-touch" className="footer-link">
+            Get In Touch
+          </Link>
         </div>
         <div className="footer-section">
-          <h4 className="footer-title">Journal</h4>
-          {/* Add a link to your journal section */}
-          <a href="/journal" className="footer-link">
-            Visit Journal
-          </a>
+          <Link to="/journal-entries" className="footer-link">
+            Journal
+          </Link>
         </div>
         <div className="footer-section">
-          <h4 className="footer-title">Careers</h4>
-          {/* Add a link to your careers section */}
-          <a href="/careers" className="footer-link">
-            View Openings
-          </a>
+          <Link to="/careers" className="footer-link">
+            Career
+          </Link>
         </div>
         <div className="footer-section">
-          <h4 className="footer-title">Privacy</h4>
-          {/* Add a link to your privacy policy */}
-          <a href="/privacy" className="footer-link">
-            Privacy Policy
-          </a>
+          <Link to="/privacy" className="footer-link">
+            Privacy
+          </Link>
         </div>
       </div>
       <div className="footer-bottom">
-        <p className="footer-copyright">
-          © Rachel Usher | Web Design: Kayleigh Noele
-        </p>
+        <p>© Rachel Usher | Web Design: Patrick Musaza</p>
       </div>
     </footer>
   );
