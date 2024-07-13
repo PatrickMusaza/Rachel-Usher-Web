@@ -5,6 +5,7 @@ import logo from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png";
 import thumbnailImage from "../../assets/images/icons/thumbnail.jpg";
 import OurProjects from "../../components/Our Projects/our-projects";
 import "./Home.css";
+import AboutUs from "../../components/About/About";
 
 const Home = () => {
   return (
@@ -17,6 +18,7 @@ const Home = () => {
         </div>
       </div>
       <OurProjects />
+      <AboutUs/>
       <Footer />
     </>
   );

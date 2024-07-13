@@ -1,0 +1,49 @@
+.about-us-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 50vh;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+.about-us-box {
+    max-width: 600px;
+    /* Maximum width */
+    background-color: #fff;
+    padding: 0.5rem;
+    /* Set padding to 0.5rem */
+    text-align: center;
+    border-radius: 8px;
+}
+
+.about-us-box h2 {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 1rem;
+    border: px solid black;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.about-us-box h2:hover {
+    background-color: black;
+    color: white;
+}
+
+.about-us-box p {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 2rem;
+}
+
+.about-us-image {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
