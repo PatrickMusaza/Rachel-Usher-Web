@@ -6,6 +6,7 @@ import thumbnailImage from "../../assets/images/icons/thumbnail.jpg";
 import OurProjects from "../../components/Our Projects/our-projects";
 import "./Home.css";
 import AboutUs from "../../components/About/About";
+import Instagram from "../../components/Instagram/Instagram";
 
 const Home = () => {
   return (
@@ -18,7 +19,8 @@ const Home = () => {
         </div>
       </div>
       <OurProjects />
-      <AboutUs/>
+      <AboutUs />
+      <Instagram />
       <Footer />
     </>
   );

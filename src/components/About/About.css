@@ -8,7 +8,7 @@
 }
 
 .about-us-box {
-    max-width: 600px;
+    max-width: 850px;
     /* Maximum width */
     background-color: #fff;
     padding: 0.5rem;
@@ -24,7 +24,7 @@
     font-weight: bold;
     display: inline-block;
     margin-bottom: 1rem;
-    border: px solid black;
+    border: 1px solid black;
     padding: 0.5rem 1rem;
     border-radius: 4px;
     transition: background-color 0.3s, color 0.3s;
@@ -37,7 +37,7 @@
 
 .about-us-box p {
     color: #333;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 2rem;
 }
 

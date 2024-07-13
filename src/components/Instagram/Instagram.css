@@ -1,0 +1,58 @@
+.instagram-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.instagram-box {
+    background-color: #fff;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+}
+
+.instagram-box h2 {
+    color: #333;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+}
+
+.instagram-box p {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 2rem;
+}
+
+.instagram-images {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    /* Evenly distribute images */
+    align-items: center;
+}
+
+.instagram-image-box {
+    margin: 5px;
+    /* Adjust spacing between images */
+}
+
+.instagram-image {
+    width: 100%;
+    height: fit-content;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+}
+
+.social-icons a {
+    color: #333;
+    margin: 0 10px;
+    font-size: 24px;
+}
