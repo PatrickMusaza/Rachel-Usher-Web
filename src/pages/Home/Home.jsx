@@ -7,6 +7,7 @@ import OurProjects from "../../components/Our Projects/our-projects";
 import "./Home.css";
 import AboutUs from "../../components/About/About";
 import Instagram from "../../components/Instagram/Instagram";
+import ContactUs from "../../components/Contact/Contact";
 
 const Home = () => {
   return (
@@ -21,6 +22,7 @@ const Home = () => {
       <OurProjects />
       <AboutUs />
       <Instagram />
+      <ContactUs />
       <Footer />
     </>
   );
