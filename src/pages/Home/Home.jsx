@@ -8,6 +8,7 @@ import "./Home.css";
 import AboutUs from "../../components/About/About";
 import Instagram from "../../components/Instagram/Instagram";
 import ContactUs from "../../components/Contact/Contact";
+import Subscription from "../../components/Subscription/Subscription";
 
 const Home = () => {
   return (
@@ -23,6 +24,7 @@ const Home = () => {
       <AboutUs />
       <Instagram />
       <ContactUs />
+      <Subscription/>
       <Footer />
     </>
   );

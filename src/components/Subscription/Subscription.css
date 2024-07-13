@@ -1,0 +1,53 @@
+.subscription-container {
+    position: relative;
+}
+
+.subscription-content {
+    width: 100%;
+    max-width: 600px;
+    padding: 2rem;
+    text-align: center;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8); /* Adjust background color and opacity */
+    margin: 0 auto; /* Center content horizontally */
+}
+
+.subscription-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap; /* Allow elements to wrap if needed */
+}
+
+.email-input {
+    width: calc(70% - 1.6rem); /* Adjust width */
+    padding: 0.8rem;
+    margin-right: 0.5rem;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: rgba(216, 232, 232, 0.3); /* Adjust background color and opacity */
+}
+
+.submit-button {
+    padding: 0.8rem 2rem;
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #000000;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.submit-button:hover {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.subscribe-image {
+    width: 100%;
+    max-width: 600px;
+    display: block;
+    margin: 2rem auto; /* Center image horizontally */
+}
