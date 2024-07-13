@@ -1,9 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logo from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png?format=1500w";
 import "./Navbar.css";
 
 function Navbar() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const handleToggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className="header-title-nav-wrapper">
       {/* Logo and Title */}
@@ -20,7 +26,7 @@ function Navbar() {
       </div>
 
       {/* Navigation Menu */}
-      <div className="header-nav">
+      <div className={`header-nav ${isMenuOpen ? "open" : ""}`}>
         <div className="header-nav-wrapper">
           <nav className="header-nav-list">
             {/* Projects Dropdown */}
@@ -78,11 +84,9 @@ function Navbar() {
         </div>
 
         {/* Mobile Menu Toggle Button */}
-        <div>
-          <div className="topnav" id="myTopnav">
-            <a href="javascript:void(0);" style={{ fontSize: "15px" }} className="icon">
-              &#9776;
-            </a>
+        <div className="topnav" id="myTopnav">
+          <div className="icon" onClick={handleToggleMenu}>
+            &#9776;
           </div>
         </div>
       </div>
