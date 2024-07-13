@@ -1,56 +1,71 @@
 .home {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-    top: -60; /* Adjusted for Navbar height */
-    height: calc(100vh - 1660px); /* Adjusted height accounting for Navbar */
-    text-align: center;
-    padding-top: 50px; /* Additional padding to create space */
-    padding-bottom: 50px; /* Additional padding to create space */
-  }
-  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -180px;
+}
+
+.home img {
+  /* Adjusted for Navbar height */
+  height: calc(100vh -1660px);
+  padding-bottom: 60px;
+  /* Adjusted height accounting for Navbar */
+  text-align: center;
+  /* Additional padding to create space */
+  /* Additional padding to create space */
+  max-width: 70%;
+  /* Ensure logo does not exceed container width */
+}
+
+.thumbnail {
+  width: 70%;
+  /* Set thumbnail container width to 70% */
+  margin-top: 50px;
+  /* Add 50px space between logo and thumbnail */
+  display: flex;
+  justify-content: center;
+  /* Center the thumbnail image horizontally */
+}
+
+.thumbnail img {
+  max-width: 100%;
+  /* Ensure thumbnail image does not exceed container width */
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
   .home img {
-    max-width: 70%; /* Ensure logo does not exceed container width */
-  }
-  
-  .thumbnail {
-    width: 70%; /* Set thumbnail container width to 70% */
-    margin-top: 50px; /* Add 50px space between logo and thumbnail */
-    display: flex;
-    justify-content: center; /* Center the thumbnail image horizontally */
-  }
-  
-  .thumbnail img {
-    max-width: 100%; /* Ensure thumbnail image does not exceed container width */
-  }
-  
-  /* Responsive adjustments */
-  @media (max-width: 768px) {
-    .home img {
-      width: 80%; /* Adjust logo width for smaller screens */
-    }
-  
-    .thumbnail {
-      width: 80%; /* Adjust thumbnail container width for smaller screens */
-    }
-  }
-  
-  @media (max-width: 480px) {
-    .home {
-      height: auto; /* Adjust height to auto for very small screens */
-      padding-top: 30px; /* Adjust padding for very small screens */
-      padding-bottom: 30px; /* Adjust padding for very small screens */
-    }
-  
-    .home img {
-      width: 70%; /* Adjust logo width for very small screens */
-    }
-  
-    .thumbnail {
-      width: 70%; /* Adjust thumbnail container width for very small screens */
-      margin-top: 30px; /* Adjust margin for better spacing on small screens */
-    }
+    width: 80%;
+    /* Adjust logo width for smaller screens */
   }
 
+  .thumbnail {
+    width: 80%;
+    /* Adjust thumbnail container width for smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  .home {
+    height: auto;
+    /* Adjust height to auto for very small screens */
+    padding-top: 30px;
+    /* Adjust padding for very small screens */
+    padding-bottom: 30px;
+    /* Adjust padding for very small screens */
+  }
+
+  .home img {
+    width: 70%;
+    /* Adjust logo width for very small screens */
+  }
+
+  .thumbnail {
+    width: 70%;
+    /* Adjust thumbnail container width for very small screens */
+    margin-top: 30px;
+    /* Adjust margin for better spacing on small screens */
+  }
+}

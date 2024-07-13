@@ -2,8 +2,9 @@ import React from "react";
 import Navbar from "../../components/NavBar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import logo from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png";
-import "./Home.css";
 import thumbnailImage from "../../assets/images/icons/thumbnail.jpg";
+import OurProjects from "../../components/Our Projects/our-projects";
+import "./Home.css";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
           <img src={thumbnailImage} alt="Rachel Usher Interior Design" />
         </div>
       </div>
+      <OurProjects />
       <Footer />
     </>
   );

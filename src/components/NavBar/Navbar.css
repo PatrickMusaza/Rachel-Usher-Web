@@ -1,14 +1,22 @@
 /* General Styles */
 .header-title-nav-wrapper {
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
   padding: 2rem;
-  background-image: url("../../assets/images/Home/luxury-high-end-minimal-masculine-interior-design-1.jpg");
-  background-repeat: no-repeat;
-  background-size: cover;
   color: #fff;
   height: 600px;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
 }
 
 .header-title-logo img {
@@ -156,10 +164,29 @@
   .header-title-nav-wrapper {
     flex-direction: column;
     align-items: center;
+    height: auto;
   }
 
   .header-nav-default {
     display: none;
+  }
+
+  .language-picker-desktop {
+    display: none;
+  }
+
+  .header-title {
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .header-title-logo {
+    margin-right: 0;
+  }
+
+  .topnav {
+    order: -1;
   }
 
   .overlay-content {

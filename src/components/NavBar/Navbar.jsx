@@ -5,6 +5,7 @@ import { faFacebook, faInstagram, faPinterest, faTwitter } from "@fortawesome/fr
 import logoWhite from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png";
 import logoBlack from "../../assets/images/Logo/RachelUsher_Logo_black_rgb.png";
 import overlayImage from "../../assets/images/Instagram/interior-designer-high-end-luxury-minimal-masculine-2.png";
+import backgroundImage from "../../assets/images/Home/luxury-high-end-minimal-masculine-interior-design-1.jpg";
 import "./Navbar.css";
 
 function Navbar() {
@@ -16,7 +17,7 @@ function Navbar() {
 
   return (
     <header className="header-title-nav-wrapper">
-      {/* Logo and Title */}
+      <img src={backgroundImage} alt="Background" className="background-image" />
       <div className="header-title">
         <div className="header-title-logo">
           <Link to="/">
