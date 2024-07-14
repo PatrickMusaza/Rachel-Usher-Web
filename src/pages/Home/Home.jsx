@@ -7,7 +7,7 @@ import OurProjects from "../../components/Our Projects/our-projects";
 import "./Home.css";
 import AboutUs from "../../components/About/About";
 import Instagram from "../../components/Instagram/Instagram";
-import ContactUs from "../../components/Contact/Contact";
+import ContactUs from "../../components/Contact/Home/Contact";
 import Subscription from "../../components/Subscription/Subscription";
 
 const Home = () => {

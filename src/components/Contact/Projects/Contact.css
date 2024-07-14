@@ -1,0 +1,66 @@
+.contact-container {
+    display: flex;
+    max-width: 1200px; /* Increased max-width to match the website */
+    margin: 60px auto; /* Increased top/bottom margin to match the website */
+    padding: 40px; /* Increased padding to match the website */
+    border-radius: 0; /* Removed border-radius to match the website */
+    background-color: #ffffff; /* Changed background color to match the website */
+    box-shadow: none; /* Removed box-shadow to match the website */
+  }
+  
+  .contact-info {
+    flex: 2;
+  }
+  
+  .contact-form {
+    flex: 1;
+    padding-left: 40px; /* Increased left padding to match the website */
+  }
+  
+  .contact-info h2 {
+    font-size: 32px; /* Increased font size to match the website */
+    margin-bottom: 20px; /* Increased bottom margin to match the website */
+    color: #333333; /* Changed text color to match the website */
+  }
+  
+  .contact-info p {
+    font-size: 18px; /* Increased font size to match the website */
+    margin-bottom: 10px; /* Increased bottom margin to match the website */
+    color: #555555; /* Changed text color to match the website */
+  }
+  
+  .social-links {
+    margin-top: 30px; /* Increased top margin to match the website */
+  }
+  
+  .social-links a {
+    color: #333333; /* Changed link color to match the website */
+    font-size: 28px; /* Increased font size to match the website */
+    margin-right: 15px; /* Increased right margin to match the website */
+  }
+  
+  .social-links a:hover {
+    color: #000000; /* Changed hover color to match the website */
+  }
+  
+  .form-group label {
+    font-size: 18px; /* Increased font size to match the website */
+    color: #333333; /* Changed label color to match the website */
+  }
+  
+  .form-group input,
+  .form-group textarea {
+    font-size: 18px; /* Increased font size to match the website */
+    border: 1px solid #cccccc; /* Changed border color to match the website */
+  }
+  
+  button[type="submit"] {
+    background-color: #333333; /* Changed button color to match the website */
+    font-size: 18px; /* Increased font size to match the website */
+    padding: 12px 24px; /* Increased padding to match the website */
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #000000; /* Changed hover color to match the website */
+  }
+  

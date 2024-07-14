@@ -1,7 +1,12 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faFacebook, faInstagram, faPinterest, faTwitter } from "@fortawesome/free-brands-svg-icons";
+import {
+  faFacebook,
+  faInstagram,
+  faPinterest,
+  faTwitter,
+} from "@fortawesome/free-brands-svg-icons";
 import logoWhite from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png";
 import logoBlack from "../../assets/images/Logo/RachelUsher_Logo_black_rgb.png";
 import overlayImage from "../../assets/images/Instagram/interior-designer-high-end-luxury-minimal-masculine-2.png";
@@ -17,7 +22,11 @@ function Navbar() {
 
   return (
     <header className="header-title-nav-wrapper">
-      <img src={backgroundImage} alt="Background" className="background-image" />
+      <img
+        src={backgroundImage}
+        alt="Background"
+        className="background-image"
+      />
       <div className="header-title">
         <div className="header-title-logo">
           <Link to="/">
@@ -26,7 +35,11 @@ function Navbar() {
         </div>
         <div className="header-nav-default">
           <div className="header-nav-item header-nav-item--folder">
-            <Link className="header-nav-folder-title" to="/projects" tabIndex="0">
+            <Link
+              className="header-nav-folder-title"
+              to="/projects"
+              tabIndex="0"
+            >
               Projects
             </Link>
             <div className="header-nav-folder-content">
@@ -37,12 +50,16 @@ function Navbar() {
               </div>
               <div className="header-nav-folder-item">
                 <Link to="/international">
-                  <span className="header-nav-folder-item-content">International</span>
+                  <span className="header-nav-folder-item-content">
+                    International
+                  </span>
                 </Link>
               </div>
               <div className="header-nav-folder-item">
                 <Link to="/in-progress">
-                  <span className="header-nav-folder-item-content">In Progress</span>
+                  <span className="header-nav-folder-item-content">
+                    In Progress
+                  </span>
                 </Link>
               </div>
             </div>
@@ -67,7 +84,7 @@ function Navbar() {
         {/* Mobile Menu Toggle Button */}
         <div className="topnav">
           <div className="icon" onClick={handleToggleMenu}>
-            {isMenuOpen ? '✖' : '☰'}
+            {isMenuOpen ? "✖" : "☰"}
           </div>
         </div>
       </div>
@@ -104,19 +121,31 @@ function Navbar() {
               </div>
               <div className="overlay-divider">MORE</div>
               <div className="overlay-social-links">
-                <a href="https://www.instagram.com"><FontAwesomeIcon icon={faInstagram} /></a>
-                <a href="https://www.twitter.com"><FontAwesomeIcon icon={faTwitter} /></a>
-                <a href="https://www.facebook.com"><FontAwesomeIcon icon={faFacebook} /></a>
-                <a href="https://www.pinterest.com"><FontAwesomeIcon icon={faPinterest} /></a>
+                <a href="https://www.instagram.com">
+                  <FontAwesomeIcon icon={faInstagram} />
+                </a>
+                <a href="https://www.twitter.com">
+                  <FontAwesomeIcon icon={faTwitter} />
+                </a>
+                <a href="https://www.facebook.com">
+                  <FontAwesomeIcon icon={faFacebook} />
+                </a>
+                <a href="https://www.pinterest.com">
+                  <FontAwesomeIcon icon={faPinterest} />
+                </a>
               </div>
             </div>
             <div className="overlay-info">
               <p>
-                Rachel Usher Interior Design is a multi-award winning high-end interior design practice specialising in providing clients with outstanding luxury interiors across the UK and internationally.
+                Rachel Usher Interior Design is a multi-award winning high-end
+                interior design practice specialising in providing clients with
+                outstanding luxury interiors across the UK and internationally.
               </p>
               <p>
-                Yorkshire: 01302 215 975<br />
-                London: 02033 266 266<br />
+                Yorkshire: 01302 215 975
+                <br />
+                London: 02033 266 266
+                <br />
                 studio@rachelusher.uk
               </p>
               <img src={logoBlack} alt="Rachel Usher Interior Design" />
