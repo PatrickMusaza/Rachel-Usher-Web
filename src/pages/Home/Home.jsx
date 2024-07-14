@@ -24,7 +24,7 @@ const Home = () => {
       <AboutUs />
       <Instagram />
       <ContactUs />
-      <Subscription/>
+      <Subscription />
       <Footer />
     </>
   );
