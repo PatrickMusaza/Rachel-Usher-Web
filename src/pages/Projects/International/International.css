@@ -55,6 +55,16 @@
     transition: opacity 0.3s ease-in-out;
 }
 
+.Discover p {
+    text-align: center;
+    white-space: pre-wrap;
+}
+
+.Discover a {
+    color: black;
+    text-decoration-style: solid;
+}
+
 .project-item:hover::before {
     opacity: 0;
 }

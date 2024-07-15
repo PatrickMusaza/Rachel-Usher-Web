@@ -4,6 +4,7 @@ import "./International.css";
 import Footer from "../../../components/Footer/Footer";
 import Navbar from "../../../components/NavBar/Navbar";
 import Contact from "../../../components/Contact/Projects/Contact";
+import { Link } from "react-router-dom";
 
 const International = () => {
   const projects = [
@@ -21,9 +22,7 @@ const International = () => {
       <Navbar />
       <div className="international-projects-container">
         <Helmet>
-          <title>
-            Our International Projects
-          </title>
+          <title>Our International Projects</title>
         </Helmet>
         <div className="intro-text">
           <h3>Rachel Usher Interior Design, International</h3>
@@ -46,7 +45,13 @@ const International = () => {
           ))}
         </div>
       </div>
-      <Contact/>
+      <Contact />
+      <div className="Discover">
+        <p>
+          <Link to="/projects">Discover our UK Projects.</Link>
+        </p>
+      </div>
+
       <Footer />
     </div>
   );

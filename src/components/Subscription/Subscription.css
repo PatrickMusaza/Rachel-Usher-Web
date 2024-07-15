@@ -8,7 +8,6 @@
     padding: 2rem;
     text-align: center;
     border-radius: 8px;
-    background-color: rgba(255, 255, 255, 0.8); /* Adjust background color and opacity */
     margin: 0 auto; /* Center content horizontally */
 }
 
@@ -33,12 +32,18 @@
     padding: 0.8rem 2rem;
     background-color: #ffffff;
     color: #000000;
-    border: 1px solid #000000;
+    border: 3px solid #000000;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s, color 0.3s;
 }
+
+.submit-button[type="submit"] {
+    background-color: #ffffff; /* Changed button color to match the website */
+    font-size: 18px; /* Increased font size to match the website */
+    padding: 12px 24px; /* Increased padding to match the website */
+  }
 
 .submit-button:hover {
     background-color: #000000;
