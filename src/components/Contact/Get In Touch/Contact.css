@@ -1,0 +1,62 @@
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.contact-details {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    flex: 1;
+}
+
+.contact-details h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.contact-info {
+    margin-bottom: 20px;
+}
+
+.contact-info h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.contact-info p {
+    font-size: 16px;
+    line-height: 2;
+    margin-top: 10px;
+}
+
+.enquiry-link {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.enquiry-link a {
+    color: black;
+}
+
+.service-description {
+    font-size: 18px;
+    line-height: 2;
+    flex: 1;
+}
+
+.social-icons {
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-block;
+    font-size: 24px;
+    margin-right: 10px;
+    color: #333;
+}
