@@ -1,0 +1,106 @@
+.form-container {
+    margin: 0 auto;
+    padding: 40px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 12px;
+    margin-top: 12px;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.form-group textarea {
+    resize: vertical;
+}
+
+.form-group .note {
+    font-size: 14px;
+    color: #666;
+    margin-top: 5px;
+}
+
+.form-group button {
+    margin-top: 15px;
+    width: fit-content;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: 2px solid;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.form-group button:hover {
+    background-color: #000000;
+    color: white;
+}
+
+.form-row {
+    display: flex;
+    justify-content: space-between;
+}
+
+.half-width {
+    width: 48%;
+}
+
+.check-service {
+    display: flex;
+    margin-top: 10px;
+    align-items: center;
+    justify-self: center;
+}
+
+.check-service input[type="checkbox"] {
+    margin-right: 10px;
+    /* Adjust spacing between checkbox and label */
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 1px solid #000;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+.check-service input[type="checkbox"]:checked {
+    background-color: #000;
+}
+
+.check-service input[type="checkbox"]:checked::after {
+    content: "\2714";
+    /* Unicode character for checkmark */
+    font-size: 14px;
+    /* Adjust size of checkmark */
+    color: white;
+    /* Color of checkmark when checked */
+    text-align: center;
+    line-height: 20px;
+    /* Align vertically */
+    display: block;
+}
+
+.chk-label {
+    font-size: 15px;
+}
+
+.required-text {
+    font-size: 12px;
+    color: #999;
+    margin-left: 5px;
+}

@@ -8,21 +8,20 @@ import {
   faPinterest,
 } from "@fortawesome/free-brands-svg-icons";
 import { Link } from "react-router-dom";
+import "./Contact.css";
 
 const Contact = () => {
   return (
     <div className="contact-container">
-      <div className="flex-container">
-        <div className="contact-details">
+      <div className="contact-content">
+        <div className="contact-info">
           <h2>Contact Us</h2>
-          <div className="contact-info">
-            <h3>Main Studio</h3>
+          <div className="contact-details">
             <p>
               <FontAwesomeIcon icon={faPhone} /> 02033 266 266
               <br />
               <FontAwesomeIcon icon={faEnvelope} /> studio@rachelusher.uk
               <br />
-              <strong>Address:</strong>
               <br />
               13 Hanover Square,
               <br />
@@ -33,14 +32,12 @@ const Contact = () => {
               *Please only send post to our Yorkshire address.
             </p>
           </div>
-          <div className="contact-info">
-            <h3>Yorkshire Address</h3>
+          <div className="contact-details">
             <p>
               <FontAwesomeIcon icon={faPhone} /> 01302 215 975
               <br />
               <FontAwesomeIcon icon={faEnvelope} /> studio@rachelusher.uk
               <br />
-              <strong>Address:</strong>
               <br />
               11 Swan Street,
               <br />
@@ -65,16 +62,16 @@ const Contact = () => {
             you would like to discuss your project further please get in touch.
           </p>
           <div className="social-icons">
-            <Link to="/">
+            <Link to="/" className="social-link">
               <FontAwesomeIcon icon={faFacebook} />
             </Link>
-            <Link to="/">
+            <Link to="/" className="social-link">
               <FontAwesomeIcon icon={faTwitter} />
             </Link>
-            <Link to="/">
+            <Link to="/" className="social-link">
               <FontAwesomeIcon icon={faInstagram} />
             </Link>
-            <Link to="/">
+            <Link to="/" className="social-link">
               <FontAwesomeIcon icon={faPinterest} />
             </Link>
           </div>
