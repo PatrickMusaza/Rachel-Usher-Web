@@ -5,6 +5,7 @@ import Subscription from "../../components/Subscription/Subscription";
 import Footer from "../../components/Footer/Footer";
 import { Helmet } from "react-helmet";
 import Image from "../../components/Services/Image Section/Image";
+import Projects from "../../components/Services/Projects/Projects";
 
 const Services = () => {
   return (
@@ -18,6 +19,7 @@ const Services = () => {
       </Helmet>
       <Navbar />
       <Image/>
+      <Projects/>
       <Subscription />
       <Footer />
     </>

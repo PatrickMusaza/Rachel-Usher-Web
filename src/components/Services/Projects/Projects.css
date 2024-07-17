@@ -1,0 +1,60 @@
+.projects-container {
+    text-align: center;
+    padding: 20px;
+    display: block;
+}
+
+.projects-container h1 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.projects {
+    margin-top: 40px;
+    margin-bottom: 40px;
+}
+
+.projects-container .projects a {
+    font-size: 1.1em;
+    border: 1px solid;
+    width: fit-content;
+    padding: 20px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.projects-container .projects a:hover {
+    background-color: black;
+    color: white;
+}
+
+.projects-container p {
+    font-size: 1em;
+    margin-bottom: 30px;
+}
+
+.projects-container a {
+    color: black;
+}
+
+.image-gallery {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+}
+
+.image-items {
+    margin: 10px;
+    box-sizing: border-box;
+    flex: 1 1 calc(33% - 40px);
+}
+
+.image-items img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.reference-award img {
+    width: 60%;
+}
