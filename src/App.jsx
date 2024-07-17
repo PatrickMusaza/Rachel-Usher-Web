@@ -9,6 +9,7 @@ import Services from "./pages/Services/Services";
 import Journal from "./pages/Journal/Journal";
 import Careers from "./pages/Careers/Careers";
 import Privacy from "./pages/Privacy/Privacy";
+import Press from "./pages/Press/Press";
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
           <Route path="/in-progress" element={<Progress />} />
           <Route path="/get-in-touch" element={<GetInTouch />} />
           <Route path="/our-services" element={<Services />} />
+          <Route path="/press" element={<Press />} />
           <Route path="/journal-entries" element={<Journal />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/privacy" element={<Privacy />} />
