@@ -5,6 +5,7 @@ import UK from "./pages/Projects/UK/UkProjects";
 import International from "./pages/Projects/International/International";
 import Progress from "./pages/Projects/In Progress/Progress";
 import GetInTouch from "./pages/Get In Touch/GetInTouch";
+import Services from "./pages/Services/Services";
 
 const App = () => {
   return (
@@ -16,6 +17,7 @@ const App = () => {
           <Route path="/international" element={<International />} />
           <Route path="/in-progress" element={<Progress />} />
           <Route path="/get-in-touch" element={<GetInTouch />} />
+          <Route path="/our-services" element={<Services />} />
         </Routes>
       </div>
     </Router>
