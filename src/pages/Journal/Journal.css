@@ -1,0 +1,26 @@
+.journal-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2em;
+    padding: 2em;
+  }
+  
+  .journal-entry {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #eaeaea;
+    padding-bottom: 1em;
+  }
+  
+  .journal-image img {
+    width: 100%;
+    height: auto;
+    margin-bottom: 1em;
+  }
+  
+  .journal-content h2 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 0.5em;
+  }
+  
