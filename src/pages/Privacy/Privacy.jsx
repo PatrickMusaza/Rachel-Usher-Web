@@ -32,11 +32,13 @@ const Privacy = () => {
           Service, you agree to the collection and use of information in
           accordance with this policy.
         </p>
+        <hr className="divider-privacy" />
         <h2>Information Collection and Use</h2>
         <p>
           We collect several different types of information for various purposes
           to provide and improve our Service to you.
         </p>
+        <hr className="divider-privacy" />
         <h3>Types of Data Collected - Personal Data</h3>
         <p>
           While using our Service, we may ask you to provide us with certain
@@ -51,6 +53,7 @@ const Privacy = () => {
           <li>Address, State, Province, ZIP/Postal code, City</li>
           <li>Cookies and Usage Data</li>
         </ul>
+        <hr className="divider-privacy" />
         <h3>Types of Data Collected - Usage Data</h3>
         <p>
           We may also collect information how the Service is accessed and used
@@ -60,6 +63,7 @@ const Privacy = () => {
           date of your visit, the time spent on those pages, unique device
           identifiers and other diagnostic data.
         </p>
+        <hr className="divider-privacy" />
         <h3>Tracking & Cookies Data</h3>
         <p>
           We use cookies and similar tracking technologies to track the activity
@@ -92,6 +96,7 @@ const Privacy = () => {
             security purposes.
           </li>
         </ul>
+        <hr className="divider-privacy" />
         <h2>Use of Data</h2>
         <p>
           Rachel Usher Interior Design uses the collected data for various
@@ -112,6 +117,7 @@ const Privacy = () => {
           <li>To monitor the usage of the Service</li>
           <li>To detect, prevent and address technical issues</li>
         </ul>
+        <hr className="divider-privacy" />
         <h2>Transfer of Data</h2>
         <p>
           Your information, including Personal Data, may be transferred to — and
@@ -136,6 +142,7 @@ const Privacy = () => {
           controls in place including the security of your data and other
           personal information.
         </p>
+        <hr className="divider-privacy" />
         <h2>Disclosure of Data - Legal Requirements</h2>
         <p>
           Rachel Usher Interior Design may disclose your Personal Data in the
@@ -156,6 +163,7 @@ const Privacy = () => {
           </li>
           <li>To protect against legal liability</li>
         </ul>
+        <hr className="divider-privacy" />
         <h2>Security of Data</h2>
         <p>
           The security of your data is important to us, but remember that no
@@ -164,6 +172,7 @@ const Privacy = () => {
           means to protect your Personal Data, we cannot guarantee its absolute
           security.
         </p>
+        <hr className="divider-privacy" />
         <h2>Service Providers</h2>
         <p>
           We may employ third party companies and individuals to facilitate our
@@ -176,11 +185,13 @@ const Privacy = () => {
           these tasks on our behalf and are obligated not to disclose or use it
           for any other purpose.
         </p>
+        <hr className="divider-privacy" />
         <h2>Analytics</h2>
         <p>
           We may use third-party Service Providers to monitor and analyse the
           use of our Service.
         </p>
+        <hr className="divider-privacy" />
         <h3>Google Analytics</h3>
         <p>
           Google Analytics is a web analytics service offered by Google that
@@ -200,6 +211,7 @@ const Privacy = () => {
           For more information on the privacy practices of Google, please visit
           the Google Privacy & Terms web page.
         </p>
+        <hr className="divider-privacy" />
         <h2>Links to Other Sites</h2>
         <p>
           Our Service may contain links to other sites that are not operated by
@@ -211,6 +223,7 @@ const Privacy = () => {
           We have no control over and assume no responsibility for the content,
           privacy policies or practices of any third party sites or services.
         </p>
+        <hr className="divider-privacy" />
         <h2>Changes to This Privacy Policy</h2>
         <p>
           We may update our Privacy Policy from time to time. We will notify you
@@ -226,6 +239,7 @@ const Privacy = () => {
           changes. Changes to this Privacy Policy are effective when they are
           posted on this page.
         </p>
+        <hr className="divider-privacy" />
         <h2>Contact Us</h2>
         <p>
           If you have any questions about this Privacy Policy, please contact

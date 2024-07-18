@@ -345,7 +345,7 @@ const Form = () => {
           <label>
             Which service(s) do you feel you require?
             <br />
-            <small className="required-text">
+            <small className="required-text-p">
               Please note this isn't fixed and we will advise you on which
               service we feel best suits your individual project requirements.
             </small>
