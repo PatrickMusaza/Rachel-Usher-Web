@@ -14,7 +14,9 @@ const International = () => {
     { image: "International/Rachel+Usher+Moderne+Villa+View+9+High+Res.jpg" },
     { image: "International/Rachel+Usher+Moderne+Villa+View+10+High+Res.jpg" },
     { image: "International/Rachel+Usher+Moderne+Villa+View+11+High+Res.jpg" },
-    { image: "International/Rachel+Usher+Moderne+Villa+View+12+High+Res.jpg" },
+    {
+      image: "International/Rachel+Usher+Moderne+Villa+View+12+High+Res.jpg",
+    },
   ];
 
   return (

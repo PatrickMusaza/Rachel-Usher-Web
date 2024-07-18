@@ -68,7 +68,7 @@ const UkProjects = () => {
         </Helmet>
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <div key={index} className="project-item">
+            <div key={index} className="project-item-uk">
               <img
                 src={require(`../../../assets/images/${project.image}`)}
                 alt={project.name}
