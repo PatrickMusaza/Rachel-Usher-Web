@@ -4,19 +4,11 @@
   justify-content: center;
   align-items: center;
   position: relative;
-  top: -180px;
 }
 
 .home img {
-  /* Adjusted for Navbar height */
-  height: calc(100vh -1660px);
-  padding-bottom: 60px;
-  /* Adjusted height accounting for Navbar */
-  text-align: center;
-  /* Additional padding to create space */
-  /* Additional padding to create space */
-  max-width: 70%;
-  /* Ensure logo does not exceed container width */
+  height: auto;
+  width: 100%;
 }
 
 .header {
@@ -40,38 +32,9 @@
   /* Ensure thumbnail image does not exceed container width */
 }
 
-/* Responsive adjustments */
-@media (max-width: 768px) {
-  .home img {
-    width: 80%;
-    /* Adjust logo width for smaller screens */
-  }
-
-  .thumbnail {
-    width: 80%;
-    /* Adjust thumbnail container width for smaller screens */
-  }
-}
-
-@media (max-width: 480px) {
+@media (max-width: 600px) {
   .home {
-    height: auto;
-    /* Adjust height to auto for very small screens */
-    padding-top: 30px;
-    /* Adjust padding for very small screens */
-    padding-bottom: 30px;
-    /* Adjust padding for very small screens */
+    display: block;
   }
 
-  .home img {
-    width: 70%;
-    /* Adjust logo width for very small screens */
-  }
-
-  .thumbnail {
-    width: 70%;
-    /* Adjust thumbnail container width for very small screens */
-    margin-top: 30px;
-    /* Adjust margin for better spacing on small screens */
-  }
 }

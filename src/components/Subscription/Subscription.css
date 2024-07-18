@@ -56,3 +56,8 @@
     display: block;
     margin: 2rem auto; /* Center image horizontally */
 }
+@media (max-width:600px){
+    .subscription-form{
+        display: block;
+    }
+}

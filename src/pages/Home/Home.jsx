@@ -25,7 +25,8 @@ const Home = () => {
         />
       </Helmet>
       <Slideshow />
-      <div className="header">
+      <div className="header"
+      >
         <Header />
       </div>
       <div className="home">

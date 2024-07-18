@@ -1,12 +1,6 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faFacebook,
-  faInstagram,
-  faPinterest,
-  faTwitter,
-} from "@fortawesome/free-brands-svg-icons";
 import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"; 
 import logoWhite from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png";
 import logoBlack from "../../assets/images/Logo/RachelUsher_Logo_black_rgb.png";
@@ -16,12 +10,20 @@ import "./Header.css";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isMenuOpen]);
+
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className="header-title-nav-wrapper">
+    <header className={`header-title-nav-wrapper ${isMenuOpen ? 'menu-open' : ''}`}>
       <div className="header-title">
         <div className="header-title-logo">
           <Link to="/">
@@ -78,20 +80,21 @@ function Header() {
 
         {/* Mobile Menu Toggle Button */}
         <div className="topnav">
-          <div className="icon" onClick={handleToggleMenu}>
+          <div className={`icon ${isMenuOpen ? 'black' : ''}`} onClick={handleToggleMenu}>
             <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
           </div>
         </div>
       </div>
 
       {/* Overlay Menu */}
-      {isMenuOpen && (
-        <div className="overlay">
-          <div className="overlay-content">
-            {/* Desktop View */}
-            <div className="overlay-image">
-              <img src={overlayImage} alt="Overlay" />
-            </div>
+      <div className={`overlay ${isMenuOpen ? 'open' : ''}`}>
+        <div className="overlay-content">
+          {/* Left Column with Image */}
+          <div className="overlay-image">
+            <img src={overlayImage} alt="Overlay" />
+          </div>
+          {/* Right Column with Links and Info */}
+          <div className="overlay-right">
             <div className="overlay-links">
               <div className="overlay-link">
                 <Link to="/about-us">About Us</Link>
@@ -115,20 +118,6 @@ function Header() {
                 <Link to="/get-in-touch">Get In Touch</Link>
               </div>
               <div className="overlay-divider">MORE</div>
-              <div className="overlay-social-links">
-                <a href="https://www.instagram.com">
-                  <FontAwesomeIcon icon={faInstagram} />
-                </a>
-                <a href="https://www.twitter.com">
-                  <FontAwesomeIcon icon={faTwitter} />
-                </a>
-                <a href="https://www.facebook.com">
-                  <FontAwesomeIcon icon={faFacebook} />
-                </a>
-                <a href="https://www.pinterest.com">
-                  <FontAwesomeIcon icon={faPinterest} />
-                </a>
-              </div>
             </div>
             <div className="overlay-info">
               <p>
@@ -147,7 +136,7 @@ function Header() {
             </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   );
 }

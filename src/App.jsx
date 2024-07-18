@@ -11,6 +11,7 @@ import Careers from "./pages/Careers/Careers";
 import Privacy from "./pages/Privacy/Privacy";
 import Press from "./pages/Press/Press";
 import AboutUs from "./pages/About Us/About";
+import Overlay from "./pages/Overlay/Overlay";
 
 const App = () => {
   return (
@@ -28,6 +29,7 @@ const App = () => {
           <Route path="/journal-entries" element={<Journal />} />
           <Route path="/careers" element={<Careers />} />
           <Route path="/privacy" element={<Privacy />} />
+          <Route path="/overlay" element={<Overlay />} />
         </Routes>
       </div>
     </Router>
