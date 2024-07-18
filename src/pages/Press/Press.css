@@ -1,24 +1,30 @@
 /* Press.css */
 
 .press-page {
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .press-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    justify-items: center;
-  }
-  
-  .press-image {
-    max-width: 100%;
-  }
-  
-  .press-image img {
-    width: 100%;
-    height: auto;
-    border-radius: 8px;
-  }
-  
+  padding: 20px;
+  text-align: center;
+  font-weight: 400;
+}
+
+.press-page a {
+  color: black;
+}
+
+.press-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  justify-items: center;
+  justify-content: center;
+  justify-self: center;
+}
+
+.press-image {
+  max-width: 100%;
+}
+
+.press-image img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
