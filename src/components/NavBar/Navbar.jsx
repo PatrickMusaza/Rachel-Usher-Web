@@ -7,8 +7,8 @@ import {
   faPinterest,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import logoWhite from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png";
-import logoBlack from "../../assets/images/Logo/RachelUsher_Logo_black_rgb.png";
+import logoBlack from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png";
+import logoWhite from "../../assets/images/Logo/RachelUsher_Logo_black_rgb.png";
 import overlayImage from "../../assets/images/Instagram/interior-designer-high-end-luxury-minimal-masculine-2.png";
 import "./Navbar.css";
 
@@ -20,64 +20,26 @@ function Navbar() {
   };
 
   return (
-    <header className="header-title-nav-wrapper">
+    <header className="header-title-nav-wrapper-nav-h">
       <div className="header-title">
         <div className="header-title-logo">
           <Link to="/">
             <img src={logoWhite} alt="Rachel Usher Interior Design" />
           </Link>
         </div>
-        <div className="header-nav-default">
-          <div className="header-nav-item header-nav-item--folder">
-            <Link
-              className="header-nav-folder-title"
-              to="/projects"
-              tabIndex="0"
-            >
-              Projects
-            </Link>
-            <div className="header-nav-folder-content">
-              <div className="header-nav-folder-item">
-                <Link to="/projects">
-                  <span className="header-nav-folder-item-content">UK</span>
-                </Link>
-              </div>
-              <div className="header-nav-folder-item">
-                <Link to="/international">
-                  <span className="header-nav-folder-item-content">
-                    International
-                  </span>
-                </Link>
-              </div>
-              <div className="header-nav-folder-item">
-                <Link to="/in-progress">
-                  <span className="header-nav-folder-item-content">
-                    In Progress
-                  </span>
-                </Link>
-              </div>
-            </div>
-          </div>
-          <div className="header-nav-item">
-            <Link to="/get-in-touch">Get In Touch</Link>
-          </div>
-          <div className="header-nav-item">
-            <Link to="/our-services">Our Services</Link>
-          </div>
-        </div>
       </div>
 
       {/* Language Picker */}
       <div className="header-actions header-actions--right">
-        <div className="language-picker language-picker-desktop">
+        <div className="language-picker language-picker-desktop-h">
           <div className="current-language">
             <span className="current-language-name">English</span>
           </div>
         </div>
 
         {/* Mobile Menu Toggle Button */}
-        <div className="topnav">
-          <div className="icon" onClick={handleToggleMenu}>
+        <div className="topnav-h">
+          <div className="icon-h" onClick={handleToggleMenu}>
             {isMenuOpen ? "✖" : "☰"}
           </div>
         </div>

@@ -19,6 +19,12 @@
   /* Ensure logo does not exceed container width */
 }
 
+.header {
+  position: fixed;
+  top: 10px;
+  width: 100%;
+}
+
 .thumbnail {
   width: 70%;
   /* Set thumbnail container width to 70% */

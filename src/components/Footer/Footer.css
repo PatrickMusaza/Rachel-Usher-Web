@@ -38,14 +38,27 @@ footer {
 
 .footer-bottom {
     text-align: center;
-    /* Center align text */
-    margin-top: 20px;
-    /* Space above footer bottom */
+    margin-top: 40px;
 }
 
 .footer-bottom p {
-    font-size: 14px;
-    /* Bottom text size */
+    font-size: 16px;
     color: #ccc;
-    /* Lighter text color */
+}
+
+@media (max-width: 600px) {
+    .footer-inner {
+        display: block;
+        text-align: center;
+    }
+
+    .footer-link {
+        margin-bottom: 30px;
+        font-size: 20px;
+    }
+
+    .footer-bottom p {
+        font-size: 14px;
+        margin-bottom: 5px;
+    }
 }

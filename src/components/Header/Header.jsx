@@ -7,6 +7,7 @@ import {
   faPinterest,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"; 
 import logoWhite from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png";
 import logoBlack from "../../assets/images/Logo/RachelUsher_Logo_black_rgb.png";
 import overlayImage from "../../assets/images/Instagram/interior-designer-high-end-luxury-minimal-masculine-2.png";
@@ -78,7 +79,7 @@ function Header() {
         {/* Mobile Menu Toggle Button */}
         <div className="topnav">
           <div className="icon" onClick={handleToggleMenu}>
-            {isMenuOpen ? "✖" : "☰"}
+            <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
           </div>
         </div>
       </div>
