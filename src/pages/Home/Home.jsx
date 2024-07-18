@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../components/NavBar/Navbar";
 import Footer from "../../components/Footer/Footer";
 import logo from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png";
 import thumbnailImage from "../../assets/images/icons/thumbnail.jpg";
@@ -10,7 +9,8 @@ import Instagram from "../../components/Instagram/Instagram";
 import ContactUs from "../../components/Contact/Home/Contact";
 import Subscription from "../../components/Subscription/Subscription";
 import { Helmet } from "react-helmet";
-
+import Header from "../../components/Header/Header";
+import Slideshow from "../../components/Slideshow/Slideshow";
 const Home = () => {
   return (
     <>
@@ -24,7 +24,8 @@ const Home = () => {
           content="A luxury multi-award winning British interior design studio that delivers high end bespoke interiors and interior architecture to discerning clients across the UK and Internationally."
         />
       </Helmet>
-      <Navbar />
+      <Slideshow />
+      <Header />
       <div className="home">
         <img src={logo} alt="Logo" />
         <div className="thumbnail">

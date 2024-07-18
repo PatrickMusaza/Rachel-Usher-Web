@@ -10,9 +10,9 @@ import {
 import logoWhite from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png";
 import logoBlack from "../../assets/images/Logo/RachelUsher_Logo_black_rgb.png";
 import overlayImage from "../../assets/images/Instagram/interior-designer-high-end-luxury-minimal-masculine-2.png";
-import "./Navbar.css";
+import "./Header.css";
 
-function Navbar() {
+function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleToggleMenu = () => {
@@ -151,4 +151,4 @@ function Navbar() {
   );
 }
 
-export default Navbar;
+export default Header;
