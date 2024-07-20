@@ -1,121 +1,96 @@
-/* General overlay styles */
-.overlays {
+.overlay-new {
   position: fixed;
   width: 100%;
   height: 100%;
   display: flex;
-  z-index: 9999;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }
 
-/* Left side styling */
-.overlay-left {
-  width: 50%;
-  height: 100%;
-  flex: 1;
+.overlay-left-new {
+  flex: 1 1 50%;
 }
 
-.overlay-left img {
+.overlay-left-new img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-/* Right side styling */
-.overlay-right {
+.overlay-right-new {
   display: flex;
-  width: 50%;
-  height: 100%;
-  flex-direction: row; /* Arrange children horizontally */
-}
-
-.overlay-right-1, .overlay-right-2 {
-  width: 50%;
-}
-
-.overlay-right-1 {
-  background-color: white;
-  justify-content: center;
-  align-items: center;
-  display: flex;
-  flex-direction: f;
-}
-
-.overlay-right-2 {
-  background-color: white;
-  display: flex;
+  flex: 1 1 50%;
   flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-/* Styling for overlay links and contact */
-.overlay-links ul {
+.overlay-section-new {
+  background-color: white;
+  padding: 20px;
+  flex-direction: column;
+  display: flex;
+  flex: 1 1 25%;
+}
+
+.overlay-links-new {
+  display: flex;
+  flex: 1 1 25%;
+}
+
+.overlay-links-new ul {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-.overlay-links li {
-  margin-bottom: 10px;
+.overlay-links-new li {
   font-size: 18px;
+  margin-bottom: 10px;
   cursor: pointer;
   transition: color 0.3s;
 }
 
-.overlay-links li:hover {
+.overlay-links-new li:hover {
   color: #333;
 }
 
-.divider {
+.divider-btn-new {
   height: 2px;
+  width: 100%;
   background-color: #333;
-  margin: 20px 0;
+  margin: 10px 0;
 }
 
-.overlay-contact p {
-  margin: 5px 0;
+.overlay-info-new {
+  display: flex;
+  flex: 1;
 }
 
-/* Black Logo Styling */
-.logo {
-  width: 20%;
-  max-width: 150px; /* Optional: To ensure it doesn’t grow too large */
-  margin-bottom: 20px;
+.overlay-info-new p {
+  font-size: 16px;
+  margin-top: 10px;
 }
 
-/* Mobile responsiveness */
-@media(max-width: 600px) {
-  .overlays {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
+.logo-new {
+  width: 80%;
+  margin-top: 20px;
+}
+
+@media (max-width: 600px) {
+  .overlay-left-new {
+    display: none;
   }
 
-  .overlay-left,
-  .overlay-right {
+  .overlay-right-new {
     width: 100%;
-    height: auto;
-    flex: none;
   }
 
-  .overlay-right {
-    flex-direction: column;
+  .overlay-links-new li,
+  .overlay-info-new p {
+    font-size: 16px;
   }
 
-  .overlay-right-1,
-  .overlay-right-2 {
-    width: 100%;
-    padding: 10px;
-  }
-
-  .overlay-left img {
-    width: 100%;
-    height: auto;
-    object-fit: cover;
-  }
-
-  .logo {
-    width: 30%; /* Adjust logo size for smaller screens */
+  .logo-new {
+    width: 50%;
   }
 }

@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons"; 
+import { faBars, faTimes } from "@fortawesome/free-solid-svg-icons";
 import logoWhite from "../../assets/images/Logo/RachelUsher_Logo_white_cmyk.png";
 import logoBlack from "../../assets/images/Logo/RachelUsher_Logo_black_rgb.png";
 import overlayImage from "../../assets/images/Instagram/interior-designer-high-end-luxury-minimal-masculine-2.png";
@@ -10,20 +10,14 @@ import "./Header.css";
 function Header() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  useEffect(() => {
-    if (isMenuOpen) {
-      document.body.style.overflow = 'hidden';
-    } else {
-      document.body.style.overflow = 'auto';
-    }
-  }, [isMenuOpen]);
-
   const handleToggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
   return (
-    <header className={`header-title-nav-wrapper ${isMenuOpen ? 'menu-open' : ''}`}>
+    <header
+      className={`header-title-nav-wrapper ${isMenuOpen ? "menu-open" : ""}`}
+    >
       <div className="header-title">
         <div className="header-title-logo">
           <Link to="/">
@@ -80,14 +74,17 @@ function Header() {
 
         {/* Mobile Menu Toggle Button */}
         <div className="topnav">
-          <div className={`icon ${isMenuOpen ? 'black' : ''}`} onClick={handleToggleMenu}>
+          <div
+            className={`icon ${isMenuOpen ? "black" : ""}`}
+            onClick={handleToggleMenu}
+          >
             <FontAwesomeIcon icon={isMenuOpen ? faTimes : faBars} />
           </div>
         </div>
       </div>
 
       {/* Overlay Menu */}
-      <div className={`overlay ${isMenuOpen ? 'open' : ''}`}>
+      <div className={`overlay ${isMenuOpen ? "open" : ""}`}>
         <div className="overlay-content">
           {/* Left Column with Image */}
           <div className="overlay-image">

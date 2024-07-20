@@ -17,7 +17,7 @@
     border-radius: 8px;
 }
 
-.about-us-box h2 {
+.about-us-box a {
     text-decoration: none;
     color: #333;
     font-size: 24px;
@@ -30,9 +30,10 @@
     transition: background-color 0.3s, color 0.3s;
 }
 
-.about-us-box h2:hover {
+.about-us-box a:hover {
     background-color: black;
     color: white;
+    cursor: pointer;
 }
 
 .about-us-box p {

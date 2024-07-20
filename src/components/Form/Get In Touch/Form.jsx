@@ -330,8 +330,8 @@ const Form = () => {
 
         <div className="form-group">
           <label htmlFor="projectDetails">
-            Please tell us more about your project{" "}
-            <p className="required-text">(required)</p>
+            Please tell us more about your project
+            <small className="required-text">(required)</small>
           </label>
           <textarea
             id="projectDetails"
