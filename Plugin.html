@@ -1,0 +1,592 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Overlay Menu</title>
+    <style>
+    /* Animation for sliding elements up */
+    @keyframes slideUp {
+        from {
+            transform: translateY(100%); /* Start from below the view */
+        }
+        to {
+            transform: translateY(0); /* End at the original position */
+        }
+    }
+
+    /* Animation for sliding elements down */
+    @keyframes slideDown {
+        from {
+            transform: translateY(-100%); /* Start from above the view */
+        }
+        to {
+            transform: translateY(0); /* End at the original position */
+        }
+    }
+
+    /* Styles for the overlay */
+    .overlay {
+        position: fixed !important; /* Fixed position to cover the entire viewport */
+        top: 0;
+        left: 0;
+        width: 100%; /* Full width */
+        height: 100%; /* Full height */
+        z-index: 9; /* Positioned above other elements */
+        background: rgba(255, 255, 255, 0); /* Transparent background */
+        display: none; /* Hidden by default */
+        visibility: hidden; /* Not visible */
+        opacity: 0; /* Fully transparent */
+        overflow-y: auto;/* Allow vertical scrolling */
+        overflow-x: hidden;
+    }
+
+    /* When the overlay is visible */
+    .overlay.visible {
+        display: flex; /* Use flexbox for layout */
+        visibility: visible; /* Make it visible */
+        opacity: 1; /* Fully opaque */
+    }
+
+    /* Layout for the overlay sections */
+    .overlay .bar-section {
+        display: flex; /* Flex layout for horizontal arrangement */
+        width: 100%; /* Full width */
+        height: 100vh; /* Full viewport height */
+        position: relative; /* Position relative for absolute children */
+    }
+
+    /* Styles for the image section of the overlay */
+    .overlay .bar-image {
+        width: 50%; /* Take half the width */
+        height: 100vh; /* Full viewport height */
+        flex-shrink: 0;
+    }
+
+    /* Image styling within the bar image section */
+    .overlay .bar-image img {
+        width: 100%; /* Full width of the container */
+        height: 100vh; /* Full height of the container */
+        object-fit: cover; /* Cover the area without distortion */
+    }
+
+    /* Divider styling between sections */
+    .overlay .divider-right {
+        border: 1px solid black; /* Black border */
+        height: 100vh; /* Full height */
+    }
+
+    /* Styles for the links section */
+    .overlay .bar-links {
+        display: flex; /* Flex layout for vertical arrangement */
+        flex-direction: column; /* Stack items vertically */
+        width: 50%; /* Take half the width */
+        /* background-color: #ccc8ba;  Light background color */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        padding-top: 30px; /* Padding at the top */
+        text-align: center; /* Center text */
+    }
+
+    /* Parent container for the list of links */
+    .overlay .bar-links .ul-parent {
+        width: 100%; /* Full width */
+        padding-top: 30px; /* Padding at the top */
+    }
+
+    /* Logo styling */
+    .overlay .rachel-logo img {
+        width: 100%; /* Full width */
+    }
+
+    /* Styling for the bottom corner of the overlay */
+    .overlay .bar-right-corner {
+        width: 100%; /* Full width */
+        padding: 10px; /* Padding */
+        text-align: center; /* Center text */
+    }
+
+    /* Mobile-specific styles */
+    .overlay .mob-bar-contact {
+        display: none; /* Hidden by default */
+    }
+/* Hide scrollbar in .bar-links */
+.overlay .bar-links .ul-parent {
+    overflow-y: auto; /* Enable vertical scrolling if needed */
+    scrollbar-width: none; /* For Firefox */
+}
+
+.overlay .bar-links .ul-parent::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}
+/* Hide scrollbar in .overlay */
+.overlay{
+    scrollbar-width: none; /* For Firefox */
+}
+
+.overlay::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Edge */
+}
+
+    /* List styling for links */
+    .overlay .bar-links .ul-parent ul {
+        list-style: none; /* No bullet points */
+        padding: 0; /* No padding */
+        margin: 0; /* No margin */
+        font-size: 24px; /* Increased font size */
+        text-align: center; /* Center text */
+        display: flex; /* Flex layout */
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Space between items */
+    }
+
+    /* Image styling within the links section */
+    .overlay .bar-links .logo-image {
+        width: 50%; /* Adjust width */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 30px; /* Space below the image */
+        align-items: center; /* Center items */
+        justify-content: center; /* Center items */
+        text-align: center; /* Center text */
+    }
+
+    /* List item styling */
+    .overlay .bar-links .ul-parent ul li {
+        margin: 10px 0; /* Space above and below each item */
+    }
+
+.overlay .bar-links .ul-parent {
+    overflow-y: auto;
+    /* Add scroll if content is too long */
+}
+    /* Link styling */
+    .overlay .bar-links .ul-parent ul li a {
+        text-decoration: none; /* Remove underline */
+        color: white; /* White text color */
+        text-transform: uppercase;
+    }
+      
+    /* Social media section styling */
+    .overlay .social-medias {
+        display: flex; /* Flex layout */
+        justify-content: center; /* Center items */
+        margin-top: 20px; /* Space above */
+        gap: 20px; /* Space between items */
+    }
+
+    /* Contact us section styling */
+    .overlay .contact-us {
+        font-size: 20px; /* Font size */
+        margin-top: 5px; /* Space above */
+    }
+
+    /* More section styling */
+    .overlay .more {
+        border-top: 1px solid black; /* Top border */
+        border-bottom: 1px solid black; /* Bottom border */
+        text-align: center; /* Center text */
+        width: 70%; /* Width of the section */
+        margin: auto; /* Center the section */
+        margin-top: 20px; /* Space above */
+        padding: 10px; /* Padding */
+    }
+
+    /* Media queries for mobile styles */
+    @media (max-width: 768px) {
+        /* Hide the image section on mobile */
+        .overlay .bar-image {
+            display: none;
+        }
+
+        /* Adjust the links section for mobile */
+        .overlay .bar-links {
+            flex-direction: column; /* Stack items vertically */
+            width: 100%; /* Full width */
+            height: 100%; /* Full height */
+            padding: 10px; /* Padding */
+        }
+
+        /* Hide the divider on mobile */
+        .overlay .divider-right {
+            display: none;
+        }
+
+        /* Show mobile contact section */
+        .overlay .mob-bar-contact {
+            display: flex; /* Flex layout */
+            border-top: 1px solid black; /* Top border */
+            text-align: center; /* Center text */
+            flex-direction: column; /* Stack items vertically */
+            gap: 10px; /* Space between items */
+        }
+
+        /* Logo styling for mobile */
+        .overlay .mob-logo img {
+            margin-top: 10%; /* Space above */
+            width: 30%; /* Adjust width */
+        }
+
+        /* Display contact us section on mobile */
+        .overlay .mob-contact-us {
+            display: block; /* Show block */
+            margin-top: 20px; /* Space above */
+        }
+
+        /* Media parent layout */
+        .overlay .media-parent {
+            display: flex; /* Flex layout */
+            flex-direction: column; /* Stack items vertically */
+            justify-content: space-between; /* Space between items */
+        }
+
+        /* Adjust the bar section width on mobile */
+        .overlay .bar-section {
+            width: 75%; /* Width of the section */
+            margin: auto; /* Center the section */
+        }
+    }
+
+    /* Animation classes for sliding up */
+    .overlay.slide-up .bar-image {
+        animation: slideUp 1s ease forwards; /* Apply slide up animation */
+    }
+
+    /* Animation classes for sliding down */
+    .overlay.slide-up .bar-links {
+        animation: slideDown 1s ease forwards; /* Apply slide down animation */
+    }
+
+    /* Animation classes for sliding down */
+    .overlay.slide-down .bar-image {
+        animation: slideDown 1s ease forwards; /* Apply slide down animation */
+    }
+
+    /* Animation classes for sliding up */
+    .overlay.slide-down .bar-links {
+        animation: slideUp 1s ease forwards; /* Apply slide up animation */
+    }
+
+    /* Classes to control z-index */
+    .hide-elements {
+        z-index: 0; /* Lower z-index */
+    }
+
+    .show-elements {
+        z-index: 9; /* Higher z-index */
+    }
+
+    /* Classes to control display */
+    .display-none {
+        display: none; /* Hidden */
+    }
+
+    .display-block {
+        display: block; /* Show as block */
+        /* or flex, depending on your layout */
+    }
+
+    /* Styles for header menu navigation items */
+    .header-menu-nav-item .bar-links {
+        display: flex; /* Flex layout */
+        flex-direction: column; /* Stack items vertically */
+        width: 100%; /* Full width */
+        padding: 0 !important; /* Remove padding */
+        /* background-color: #ccc8ba;  Background color */
+        justify-content: center; /* Center items vertically */
+        align-items: center; /* Center items horizontally */
+        text-align: center; /* Center text */
+    }
+
+    /* List styling for header menu navigation */
+    .header-menu-nav-item .bar-links .ul-parent ul {
+        list-style: none; /* No bullet points */
+        padding: 0; /* No padding */
+        margin: 0; /* No margin */
+        font-size: 20px; /* Font size */
+        text-align: center; /* Center text */
+        display: flex; /* Flex layout */
+        flex-direction: column; /* Stack items vertically */
+        gap: 20px; /* Space between items */
+    }
+
+    /* Image styling within header menu */
+    .header-menu-nav-item .bar-links img {
+        width: 30%; /* Adjust width */
+        height: auto; /* Maintain aspect ratio */
+        margin-top: 30px; /* Space above */
+        margin-bottom: 30px; /* Space below */
+        text-align: center; /* Center text */
+    }
+    /* Image styling within header menu */
+    .overlay .bar-links img {
+        width: 35%; /* Adjust width */
+        height: auto; /* Maintain aspect ratio */
+        margin-bottom: 30px; /* Space below */
+        text-align: center; /* Center text */
+    }
+
+    /* List item styling for header menu */
+    .header-menu-nav-item .bar-links .ul-parent ul li {
+        margin: 10px 0; /* Space above and below each item */
+    }
+
+    /* Link styling for header menu */
+    .header-menu-nav-item .bar-links .ul-parent ul li a {
+        text-decoration: none; /* Remove underline */
+        color: white !important; /* White text color */
+        text-transform: uppercase;
+    }
+
+    /* Hide the image section in header menu */
+    .header-menu-nav-item .bar-image {
+        display: none; /* Hidden */
+    }
+
+    /* Background color for header menu items */
+    .header-menu-nav-item {
+        /* background-color: #ccc8ba;  Background color */
+    }
+    </style>
+</head>
+<body>
+    <!-- Overlay Section -->
+  <section id="overlay-section" class="overlay hidden">
+    <div class="bar-section">
+        <div class="bar-links">
+            <div class="ul-parent">
+                <!-- Logo image -->
+                <div id="logo-image"></div>
+                <!-- Navigation links -->
+                <ul id="header-nav-container"></ul>
+            </div>
+        </div>
+        <div class="bar-image"></div>
+    </div>
+</section>
+  <script>
+document.addEventListener("DOMContentLoaded", function () {
+    const baseUrl = window.location.origin;
+    const currentPath = window.location.pathname;
+
+    // Function to check if the current path is not the overlay page
+    function shouldLoadOverlayInBackground() {
+        return currentPath !== '/image-overlay';
+    }
+
+    // Load the overlay page in the background using an iframe
+    function loadOverlayInBackground() {
+        const iframe = document.createElement('iframe');
+        iframe.style.display = 'none'; // Hide the iframe
+        iframe.src = `${baseUrl}/image-overlay`;
+        document.body.appendChild(iframe);
+
+        iframe.onload = function() {
+            const redirectUrl = sessionStorage.getItem('redirectAfterOverlay');
+            if (redirectUrl) {
+                sessionStorage.removeItem('redirectAfterOverlay');
+                window.location.href = redirectUrl;
+            }
+        };
+    }
+
+    // Prevent infinite loop if already on the overlay page
+    if (currentPath === '/image-overlay') {
+        return; // Exit if already on the overlay page
+    }
+
+    // Check if the overlay needs to be loaded in the background
+    if (shouldLoadOverlayInBackground() && !sessionStorage.getItem('overlayLoaded')) {
+        sessionStorage.setItem('overlayLoaded', 'true'); // Mark overlay as loaded
+        sessionStorage.setItem('redirectAfterOverlay', window.location.href);
+        loadOverlayInBackground();
+    }
+
+    // Handle clicks on internal links
+    document.addEventListener('click', function (event) {
+        const link = event.target.closest('a');
+        if (!link) return;
+
+        const targetUrl = link.href;
+
+        // Check if the link is within the same domain and not the overlay page
+        if (targetUrl.startsWith(baseUrl) && !targetUrl.includes('/image-overlay')) {
+            event.preventDefault(); // Prevent the default link behavior
+            sessionStorage.setItem('overlayLoaded', 'true'); // Mark overlay as loaded
+            sessionStorage.setItem('redirectAfterOverlay', targetUrl);
+            loadOverlayInBackground();
+        }
+    });
+
+    // Handle direct access to URLs
+    if (shouldLoadOverlayInBackground() && !sessionStorage.getItem('overlayLoaded')) {
+        const checkDirectAccess = () => {
+            if (currentPath !== '/image-overlay' && !sessionStorage.getItem('overlayLoaded')) {
+                sessionStorage.setItem('overlayLoaded', 'true');
+                sessionStorage.setItem('redirectAfterOverlay', window.location.href);
+                loadOverlayInBackground();
+            }
+        };
+        checkDirectAccess();
+    }
+
+    // Function to extract and store data from the fetched page
+    function storeDataFromOverlayPage(content) {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(content, 'text/html');
+
+        // Extract image source
+        function extractImageSource(sourceBlockId, storageKey) {
+            const sourceBlock = doc.getElementById(sourceBlockId);
+            if (sourceBlock) {
+                const sourceImage = sourceBlock.querySelector("img");
+                if (sourceImage) {
+                    const imageSrc = sourceImage.dataset.src || sourceImage.dataset.image || sourceImage.src;
+                    localStorage.setItem(storageKey, imageSrc);
+                }
+            }
+        }
+
+        // Extract background color
+        function extractBackgroundColor(colorBlockId, storageKey) {
+            const colorBlock = doc.querySelector(colorBlockId);
+            if (colorBlock) {
+                let color = colorBlock.style.backgroundColor || window.getComputedStyle(colorBlock).backgroundColor;
+                if (!color || color === 'rgba(0, 0, 0, 0)' || color === 'transparent') {
+                    color = window.getComputedStyle(colorBlock).getPropertyValue('--shape-block-background-color').trim();
+                }
+                if (color && color !== 'rgba(0, 0, 0, 0)' && color !== 'transparent') {
+                    localStorage.setItem(storageKey, color);
+                }
+            }
+        }
+
+        // Extract data
+        extractImageSource('block-affb1f66b128a71d96b5', 'overlay-image-src');
+        extractImageSource('block-yui_3_17_2_1_1723742170095_6809', 'logo-image-src');
+        extractBackgroundColor('#block-yui_3_17_2_1_1723913961569_2025', 'bar-links-bg-color');
+    }
+
+    // Check if data has been processed
+    if (!localStorage.getItem('data-processed')) {
+        fetch('/image-overlay')
+            .then(response => response.text())
+            .then(content => {
+                storeDataFromOverlayPage(content);
+                localStorage.setItem('data-processed', 'true');
+                location.reload(); // Reload page to apply changes
+            });
+    }
+
+    // Apply stored data to page elements
+    function applyStoredImage(targetSelector, storageKey) {
+        const targetContainer = document.querySelector(targetSelector);
+        if (targetContainer) {
+            const imageSrc = localStorage.getItem(storageKey);
+            if (imageSrc) {
+                const newImage = document.createElement("img");
+                newImage.src = imageSrc;
+                newImage.alt = "Overlay Image";
+                targetContainer.innerHTML = '';
+                targetContainer.appendChild(newImage);
+            }
+        }
+    }
+
+    function applyStoredBackgroundColor(targetSelector, storageKey) {
+        const targetElement = document.querySelector(targetSelector);
+        if (targetElement) {
+            const color = localStorage.getItem(storageKey);
+            if (color) {
+                targetElement.style.backgroundColor = color;
+            }
+        }
+    }
+
+    applyStoredImage('.bar-image', 'overlay-image-src');
+    applyStoredImage('#logo-image', 'logo-image-src');
+    applyStoredBackgroundColor('.bar-links', 'bar-links-bg-color');
+
+    // Manage header navigation and overlay section
+    const headerNavContainer = document.getElementById('header-nav-container');
+    const existingContent = document.querySelectorAll('.header-nav-item');
+    const addedHrefs = new Set();
+
+    existingContent.forEach((item) => {
+        const href = item.querySelector('a').getAttribute('href');
+        const text = item.querySelector('a').textContent.trim();
+
+        if (!addedHrefs.has(href)) {
+            addedHrefs.add(href);
+            const li = document.createElement('li');
+            li.className = 'header-nav-item header-nav-item--collection';
+            const a = document.createElement('a');
+            a.href = href;
+            a.textContent = text;
+            a.className = 'preSlide slideIn';
+            a.style.transitionTimingFunction = 'ease';
+            a.style.transitionDuration = '0.8s';
+            a.style.transitionDelay = `0.015s`;
+            li.appendChild(a);
+            headerNavContainer.appendChild(li);
+        }
+    });
+
+    const overlaySection = document.getElementById('overlay-section');
+    const headerMenuContents = document.querySelectorAll('.container.header-menu-nav-item.header-menu-nav-item--collection');
+
+    if (headerMenuContents.length > 0) {
+        headerMenuContents.forEach((headerMenuContent, index) => {
+            headerMenuContent.innerHTML = '';
+            if (index === 0 && overlaySection) {
+                headerMenuContent.innerHTML = overlaySection.innerHTML;
+            }
+        });
+    }
+
+    // Toggle burger menu and overlay section
+    const burgerBtn = document.querySelector('.header-burger-btn');
+    const overlay = document.getElementById('overlay-section');
+    const elementsToToggleZIndex = document.querySelectorAll('.gallery, .gallery-section-wrapper, section[data-section-id="669e7ec26da4233a650b41c7"], section[data-section-id="669e8304f61d9732f1e373be"], section[data-section-id="669e83fe74cc7c729092cbdd"], section[data-section-id="669e85b5720a310f3eb3275f"], section[data-section-id="669e89c26807cc326b79b4d1"], section[data-section-id="669c1e9f17973563eec01118"], section[data-section-id="66a64aee3dd05339f63d416b"]');
+    const elementsToToggleDisplay = document.querySelectorAll('.header-nav, .header-title, .language-picker');
+
+    if (burgerBtn && overlay) {
+        burgerBtn.addEventListener('click', function () {
+            if (overlay.classList.contains('visible')) {
+                overlay.classList.remove('visible');
+                overlay.classList.remove('slide-up');
+                overlay.classList.add('slide-down');
+                setTimeout(() => {
+                    overlay.style.opacity = "0";
+                    overlay.style.visibility = "hidden";
+                    elementsToToggleZIndex.forEach(element => {
+                        element.classList.remove('hide-elements');
+                        element.classList.add('show-elements');
+                    });
+                    elementsToToggleDisplay.forEach(element => {
+                        element.classList.remove('display-none');
+                        element.classList.add('display-block');
+                    });
+                }, 0);
+            } else {
+                overlay.style.opacity = "1";
+                overlay.style.visibility = "visible";
+                overlay.classList.add('visible');
+                overlay.classList.remove('slide-down');
+                overlay.classList.add('slide-up');
+                elementsToToggleZIndex.forEach(element => {
+                    element.classList.add('hide-elements');
+                    element.classList.remove('show-elements');
+                });
+                elementsToToggleDisplay.forEach(element => {
+                    element.classList.add('display-none');
+                    element.classList.remove('display-block');
+                });
+            }
+        });
+    }
+});
+</script>
+
+  
+</body>
+</html>
